@@ -38,6 +38,10 @@
   #{$property}: -webkit-calc(#{$expression});
   #{$property}: calc(#{$expression});
 }
+@mixin back(){
+  background: no-repeat center center;
+  background-size: cover;
+}
 
 
 

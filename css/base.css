@@ -10,7 +10,21 @@ html, body {
   height: 100%; }
 
 body {
+  font-family: 'FuturaBook',sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  color: #333333;
+  background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+header {
+  height: 870px;
+  background: no-repeat center center;
+  background-size: cover;
+  background-image: url("../img/header.png"); }
+
+section {
+  min-height: 400px; }
 
 /*# sourceMappingURL=base.css.map */

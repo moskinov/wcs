@@ -1,23 +1,13 @@
+$(document).ready(function() {
+  $('[data-main-nav]').onePageNav({
+    changeHash: true
+  });
+});
+
 (function($) {
 
 
-  function initNav(){
-
-    var navH = $('.navigation').height();
-
-    $('#main-navigation-link,#navigation-link').singlePageNav({
-      offset: navH,
-      speed: 0,
-      threshold: 400,
-      filter: '',
-      easing: '',
-      currentClass: 'active'
-    });
-
-    alert(1)
-  }
-
-  $(window).on( 'resize load', initNav );
+  //$(window).on( 'resize load', initNav );
 
   $(window).on('scroll',function(){
     var wnd = $(this);

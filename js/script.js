@@ -13,6 +13,8 @@
       easing: '',
       currentClass: 'active'
     });
+
+    alert(1)
   }
 
   $(window).on( 'resize load', initNav );
@@ -87,15 +89,6 @@
     itemsMobile : [456,1],
     paginationSpeed : 400,
     navigationText : ["", ""]
-  });
-
-  $('.team-info .owl-carousel .owl-item').after(" ");
-
-  $('.b-widget_addition').live('click',function(){
-
-    $("html,body").animate({"scrollTop":$(window).scrollTop()+200},300);
-    $(this).closest('.b-widget').toggleClass('open');
-
   });
 
 })(jQuery);

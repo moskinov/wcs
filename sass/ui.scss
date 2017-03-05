@@ -1,6 +1,109 @@
 
 @import 'var';
+@import 'mixin';
 
+.toggle-menu {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 24px;
+  height: 19px;
+  cursor: pointer;
 
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin: auto;
+    background-color: #ffffff;
+    @include transition(background-color 0.2s);
+
+    &:before,&:after {
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 3px;
+      background-color: #ffffff;
+      content: '';
+      @include transition(transform 0.2s);
+    }
+
+    &:before {
+      @include  transform(translateY(-200%));
+      margin-top: -2px;
+    }
+
+    &:after {
+      @include  transform(translateY(200%));
+      margin-top: 2px;
+    }
+  }
+
+  &.active {
+
+    span {
+      background-color: transparent;
+
+      &:before {
+        @include  transform(translateY(4px) rotate(45deg));
+      }
+
+      &:after {
+        @include  transform(translateY(0) rotate(-45deg));
+      }
+    }
+  }
+}
+
+button {
+  font-family: $demi;
+  font-size: 20px;
+  line-height: 20px;
+  background: transparent;
+  text-align: center;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  padding: 13px 22px 13px;
+  @include transition(all 0.2s);
+
+  &:hover {
+    background: #fff;
+    color: $blue;
+  }
+}
+
+.btn-set {
+
+  button {
+    margin: 0 4px;
+  }
+}
+
+.owl-dots {
+  margin-top: 40px;
+  overflow: hidden;
+
+  .owl-dot {
+    cursor: pointer;
+    border: 2px solid #fff;
+    width: 14px;
+    height: 14px;
+    background: transparent;
+    float: left;
+    margin-right: 16px;
+    @include border-radius(100%);
+    @include transition(background 0.2s);
+
+    &:hover,&.active {
+      background: #fff;
+    }
+  }
+}
 
 

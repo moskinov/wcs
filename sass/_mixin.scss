@@ -39,7 +39,8 @@
   #{$property}: calc(#{$expression});
 }
 @mixin back(){
-  background: no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 

@@ -1,3 +1,14 @@
+@media screen and (max-width: 1060px) {
+  nav .nav-default ul:after {
+    display: none; } }
+@media screen and (max-width: 720px) {
+  nav .nav-default {
+    display: none; }
+  nav .nav-mobile {
+    display: block; }
 
+  section {
+    padding-top: 50px;
+    margin-top: -50px; } }
 
 /*# sourceMappingURL=media.css.map */

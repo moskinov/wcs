@@ -26,7 +26,8 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="lib/owl.carousel.css">
+    <link rel="stylesheet" href="css/icon-b64.css">
+    <link rel="stylesheet" href="lib/owl.carousel.min.css">
     <link rel="stylesheet" href="font/stylesheet.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/ui.css">
@@ -34,32 +35,105 @@
 </head>
 <body>
 
-<header>
-
     <nav>
-        <ul data-main-nav>
-            <li><a href="#about">About us</a></li>
-            <li><a href="#catalogue">Catalogue</a></li>
-            <li><a href="#clients">Our clients</a></li>
-            <li><a href="#team">Our team</a></li>
-            <li><a href="#market">Our market</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-        </ul>
+        <div class="nav-default">
+            <ul data-nav-default>
+                <li class="hide"><a href="#header"></a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#catalogue">Catalogue</a></li>
+                <li><a href="#clients">Our clients</a></li>
+                <li><a href="#team">Our team</a></li>
+                <li><a href="#market">Our market</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-mobile box-blue">
+            <div data-toggle class="toggle-menu"><span></span></div>
+            <ul data-nav-mobile class="mobile-list">
+                <li class="hide"><a href="#header"></a></li>
+                <li><a data-link-mobile href="#about">About us</a></li>
+                <li><a data-link-mobile href="#catalogue">Catalogue</a></li>
+                <li><a data-link-mobile href="#clients">Our clients</a></li>
+                <li><a data-link-mobile href="#team">Our team</a></li>
+                <li><a data-link-mobile href="#market">Our market</a></li>
+                <li><a data-link-mobile href="#contacts">Contacts</a></li>
+                <!--li><a href="http://google.com" class="external">Some other link</a></li-->
+            </ul>
+        </div>
     </nav>
 
-</header>
+    <header id="header">
+        <div class="intro box-blue">
+            Wembley Chemicals and Supplies Ltd. is a company mainly active in the international trading of petrochemical products such as glycols, absorbents, and feedstock for the production of petroleum resins and operating in the Russian Federation, Europe and many other countries worldwide.
+            <div class="btn-set">
+                <button data-scroll="catalogue">Catalogue</button>
+                <button data-scroll="contacts">Contacts us</button>
+            </div>
+        </div>
+    </header>
 
-<section id="about">about as</section>
-<section id="catalogue">catalogue</section>
-<section id="clients">our clients</section>
-<section id="team">our team</section>
-<section id="market">our MARKET</section>
-<section id="contacts">contacts</section>
+    <section id="about">
+            <div class="about-slide box-blue">
+                <h2>about as</h2>
+
+                <div data-about-slide class="owl-carousel owl-theme">
+                    <div class="item">
+                        <p>
+                            Relatively young and fast growing the Company was founded in 2011 and has already positioned itself as a reliable, responsible and flexible partner to the global petrochemical producers in the market.
+                        </p>
+                        <p>
+                            Wembley Chemicals and Supplies Ltd. employs a team of skilled and high performing young specialists qualified in sales, logistics, finance and project management with more than 10 years of experience in the petrochemical industry.
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="catalogue">
+
+        <h2 class="title">catalogue</h2>
+
+        <div class="container">
+            <div class="row">
+                <div class="item">hjhjhjhjhj</div>
+                <div class="item">trhrthrthrth2</div>
+                <div class="item">rthrthrth</div>
+            </div>
+        </div>
+
+        <div class="container big">
+            <div class="row wrap">
+                <div class="item">hjhjhjhjhj</div>
+                <div class="item">trhrthrthrth2</div>
+                <div class="item">rthrthrth</div>
+                <div class="item">rthrthrth</div>
+                <div class="item">rthrthrth</div>
+                <div class="item">rthrthrth</div>
+                <div class="item">rthrthrth</div>
+                <div class="item">rthrthrth</div>
+                <div class="item">rthrthrth</div>
+                <div class="item">rthrthrth</div>
+            </div>
+        </div>
+
+
+
+    </section>
+    <section id="clients">our clients</section>
+    <section id="team">our team</section>
+    <section id="market">our MARKET</section>
+    <section id="contacts">contacts</section>
+
 <footer></footer>
 
 <script src="lib/jquery.min.js"></script>
-<script src="lib/jquery.fullpage.min.js"></script>
-<script src="lib/owl.carousel.min.js"></script>
+<script src="lib/jquery.nav.js"></script>
+<script src="lib/owl.carousel.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

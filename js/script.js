@@ -1,7 +1,76 @@
 $(document).ready(function() {
-  $('[data-main-nav]').onePageNav({
-    changeHash: true
+
+
+  var navMobile = $('[data-nav-mobile]');
+  var linkMobile = $('[data-link-mobile]');
+  var navParent = $('nav');
+  var btnMenu = $('[data-toggle]');
+  var btnScroll = $('[data-scroll]');
+
+  $('[data-nav-default],[data-nav-mobile]').onePageNav({
+    currentClass: 'current',
+    changeHash: true,
+    scrollSpeed: 750,
+    scrollThreshold: 0.5,
+    filter: ':not(.external)',
+    easing: 'swing',
+    begin: function() {
+      //I get fired when the animation is starting
+    },
+    end: function() {
+      //I get fired when the animation is ending
+    },
+    scrollChange: function($currentListItem) {
+      //I get fired when you enter a section and I pass the list item of the section
+    }
   });
+
+  $(window).on('scroll',function(){
+
+    if($(this).scrollTop() > 60) {
+
+      navParent.addClass('fix');
+
+    } else {
+
+      navParent.removeClass('fix');
+    }
+
+  });
+
+  btnMenu.on('click',function(){
+
+    $(this).toggleClass('active');
+
+    navMobile.slideToggle(300);
+
+  });
+
+  linkMobile.on('click', function(){
+
+    navMobile.slideUp(300);
+
+    if(btnMenu.hasClass('active')) {
+
+      btnMenu.removeClass('active');
+    }
+
+  });
+
+  btnScroll.on('click', function(){
+
+    var go = $(this).attr('data-scroll');
+
+    var to = $('#'+go).offset().top;
+
+    $('html, body').animate({"scrollTop" : to}, 750);
+  });
+
+  $("[data-about-slide]").owlCarousel({
+    items: 1,
+    nav: false
+  })
+
 });
 
 (function($) {
@@ -9,34 +78,7 @@ $(document).ready(function() {
 
   //$(window).on( 'resize load', initNav );
 
-  $(window).on('scroll',function(){
-    var wnd = $(this);
-    var header = $('.intro-box').height();
 
-    if(wnd.scrollTop() > 1) {
-      $('.navigation-box').addClass('fix');
-    } else {
-      $('.navigation-box').removeClass('fix');
-    }
-
-  });
-
-  $('#toggle-menu').on('click',function(){
-
-    var but = $(this);
-    var nav = $('#navigation-link');
-    var link = $('.show-section');
-
-    but.toggleClass('active');
-    nav.slideToggle(300);
-
-    link.click(function(){
-      nav.slideUp(300);
-      if(but.hasClass('active')) {
-        but.removeClass('active')
-      }
-    })
-  });
 
 
   $("#competence-list").owlCarousel({

@@ -54,10 +54,17 @@ h2 {
   text-transform: uppercase;
 
   &.title {
-  text-align: center;
-  padding-top: 134px;
-  margin-bottom: 54px;
+    text-align: center;
+    padding-top: 120px;
+    margin-bottom: 54px;
+  }
 }
+
+h1 {
+  font-size: 70px;
+  line-height: 70px;
+  border-bottom: 8px solid;
+  padding-bottom: 14px;
 }
 
 p {
@@ -70,61 +77,136 @@ p {
 
 .container {
   margin: 0 auto;
-  max-width: 1260px;
-  padding: 0 50px;
+  //max-width: 1240px;
+  max-width: 1680px;
+  padding: 0 40px;
 
-  &.big {
-    max-width: 1680px;
-    padding: 0 40px;
+  &.small {
+
   }
 }
 
-.row {
+
+.grid {
+  display: -webkit-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
 
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-box-orient:     horizontal;
+  -webkit-box-direction:  normal;
+  -ms-flex-direction:     row;
+  flex-direction:         row;
 
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -webkit-flex-wrap:  wrap;
+  -ms-flex-wrap:      wrap;
+  flex-wrap:          wrap;
 
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-align:  stretch;
+  -ms-flex-align:     stretch;
+  align-items:        stretch;
 
-  -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+  margin-left: -20px;
+  margin-right: -20px;
 
-  &.wrap {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+  &.between {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
 
+  &.center {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
 
-    margin: 0 -20px;
+  .column {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
 
-    .item {
-      margin: 0 20px;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
   }
 
-  .item{
-    //-webkit-box-flex: 1;
-    //-webkit-flex: 1;
-    //flex: 1;
-    width: 280px;
-    background: #ccc;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
+  &.catalog {
+
+    .column {
+      max-width: 320px;
+      width: 20%;
+      margin-left: 4%;
+      margin-right: 4%;
+
+      .item {
+        display: block;
+        color: $text;
+        text-decoration: none;
+        margin-bottom: 40px;
+
+        img {
+          margin-bottom: -30px;
+        }
+
+        h1 {
+          display: inline-block;
+          margin: 0;
+          @include transition(color 0.3s);
+        }
+
+        &:hover {
+
+          h1 {
+            color: $active-blue;
+          }
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 24px;
+          left: 0;
+          width: 84px;
+          height: 84px;
+          background-position: center center;
+          background-repeat: no-repeat;
+          -webkit-background-size: contain;
+          -moz-background-size: contain;
+          -o-background-size: contain;
+          background-size: contain;
+          @include transform(translateX(-50%));
+          z-index: 2;
+        }
+
+      }
+
+      p {
+        font-size: 22px;
+        line-height: 24px;
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+
+  &.clients {
+    padding-bottom: 70px;
+
+    .column {
+      width: 20%;
+      max-width: 320px;
+      text-align: center;
+      padding-bottom: 20px;
+
+      p {
+        font-size: 24px;
+        line-height: 24px;
+        margin: 24px 0 0 0;
+      }
+    }
   }
 }
 
@@ -137,27 +219,36 @@ p {
   display: none !important;
 }
 
-//-----columns-----//
-
-.col_1,
-.col_2,
-.col_3, .col_3c,
-.col_4, .col_4c,
-.col_5, .col_5c {
-  margin-left: 2%;
-  margin-right: 2%;
-  float: left;
-  display: block;
+.item {
+  position: relative;
 }
 
-.col_1 { width: 96%; }
-.col_2 { width: 46%; }
-.col_3 { width: 29.3333333333%; }
-.col_4 { width: 21%; }
-.col_5 { width: 16%; }
-.col_3c { width: 62.6666666667%; }
-.col_4c { width: 71%; }
-.col_5c { width: 76%; }
+.team {
+
+  .item {
+    font-family: $book;
+    text-align: center;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .name {
+      font-size: 24px;
+      line-height: 24px;
+      margin: 24px 0 14px 0;
+    }
+
+    .role {
+      font-size: 16px;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+  }
+
+}
 
 //-----navigate-----//
 

@@ -69,7 +69,15 @@ $(document).ready(function() {
   $("[data-about-slide]").owlCarousel({
     items: 1,
     nav: false
-  })
+  });
+
+  $("[data-team-slide]").owlCarousel({
+    items: 5,
+    margin: 40,
+    nav: true,
+    dots: false,
+    navText:['','']
+  });
 
 });
 

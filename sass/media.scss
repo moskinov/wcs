@@ -1,6 +1,13 @@
 
 @import 'var';
 
+@media screen and (max-width: 1630px) {
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
 @media screen and (max-width: 1060px) {
   nav .nav-default ul:after {
     display: none;

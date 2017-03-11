@@ -80,6 +80,15 @@ button {
   button:hover, button.invert {
     background: #fff;
     color: #172044; }
+  button.blue {
+    color: #172044;
+    border: 2px solid #172044;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 7px 10px 6px; }
+    button.blue:hover {
+      background: #172044;
+      color: #fff; }
 
 .btn-set button {
   margin: 0 4px; }

@@ -501,7 +501,7 @@ nav {
   .right {
     position: relative;
     min-height: 480px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 
     .map {
       height: 480px;
@@ -509,6 +509,10 @@ nav {
       right: 0;
       left: 44%;
       z-index: 2;
+    }
+
+    .column {
+      margin-bottom: 0!important;
     }
   }
 

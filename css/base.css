@@ -354,13 +354,15 @@ nav {
 .contacts .right {
   position: relative;
   min-height: 480px;
-  padding-bottom: 20px; }
+  padding-bottom: 50px; }
   .contacts .right .map {
     height: 480px;
     position: absolute;
     right: 0;
     left: 44%;
     z-index: 2; }
+  .contacts .right .column {
+    margin-bottom: 0 !important; }
 .contacts .item {
   margin-bottom: 50px;
   padding-left: 34px;

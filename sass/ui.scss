@@ -77,6 +77,19 @@ button {
     color: $blue;
   }
 
+  &.blue {
+    color: $blue;
+    border: 2px solid $blue;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 7px 10px 6px;
+
+    &:hover {
+      background: $blue;
+      color: #fff;
+    }
+  }
+
 }
 
 .btn-set {

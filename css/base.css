@@ -42,9 +42,24 @@ section {
   padding-top: 80px;
   margin-top: -80px; }
 
-h1, h2 {
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 150px 20px 74px 20px;
+  background-position: center 80px;
+  background-repeat: no-repeat;
+  background-size: 196px;
+  color: #172044; }
+
+h1, h2, h3 {
   font-family: "FuturaDemi", sans-serif;
   font-weight: normal; }
+
+h1 {
+  font-size: 70px;
+  line-height: 70px;
+  border-bottom: 8px solid;
+  padding-bottom: 14px; }
 
 h2 {
   font-size: 35px;
@@ -56,11 +71,11 @@ h2 {
     padding-top: 120px;
     margin-bottom: 54px; }
 
-h1 {
-  font-size: 70px;
-  line-height: 70px;
-  border-bottom: 8px solid;
-  padding-bottom: 14px; }
+h3 {
+  font-size: 24px;
+  line-height: 26px;
+  margin: 0 0 16px;
+  text-transform: uppercase; }
 
 p {
   margin: 0 0 28px 0; }
@@ -101,67 +116,13 @@ p {
     vertical-align: top;
     padding-left: 20px;
     padding-right: 20px;
-    position: relative; }
+    position: relative;
+    max-width: 320px;
+    width: 20%; }
     .grid .column img {
       width: 100%;
       height: auto;
       display: block; }
-  .grid.catalog .column {
-    max-width: 320px;
-    width: 20%;
-    margin-left: 4%;
-    margin-right: 4%; }
-    .grid.catalog .column .item {
-      display: block;
-      color: #333333;
-      text-decoration: none;
-      margin-bottom: 40px; }
-      .grid.catalog .column .item img {
-        margin-bottom: -30px; }
-      .grid.catalog .column .item h1 {
-        display: inline-block;
-        margin: 0;
-        -webkit-transition: color 0.3s;
-        -moz-transition: color 0.3s;
-        -ms-transition: color 0.3s;
-        -o-transition: color 0.3s;
-        transition: color 0.3s; }
-      .grid.catalog .column .item:hover h1 {
-        color: #0b36e4; }
-      .grid.catalog .column .item:before {
-        content: '';
-        position: absolute;
-        top: 24px;
-        left: 0;
-        width: 84px;
-        height: 84px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        -webkit-background-size: contain;
-        -moz-background-size: contain;
-        -o-background-size: contain;
-        background-size: contain;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-        z-index: 2; }
-    .grid.catalog .column p {
-      font-size: 22px;
-      line-height: 24px;
-      margin: 0 0 10px 0; }
-  .grid.clients {
-    padding-bottom: 70px; }
-    .grid.clients .column {
-      width: 20%;
-      max-width: 320px;
-      text-align: center;
-      padding-bottom: 20px; }
-      .grid.clients .column p {
-        font-size: 24px;
-        line-height: 24px;
-        margin: 24px 0 0 0; }
 
 .box-blue {
   background-color: #172044;
@@ -170,24 +131,11 @@ p {
 .hide {
   display: none !important; }
 
+.map {
+  background: #c9c9c9; }
+
 .item {
   position: relative; }
-
-.team .item {
-  font-family: "FuturaBook", sans-serif;
-  text-align: center; }
-  .team .item img {
-    display: block;
-    width: 100%;
-    height: auto; }
-  .team .item .name {
-    font-size: 24px;
-    line-height: 24px;
-    margin: 24px 0 14px 0; }
-  .team .item .role {
-    font-size: 16px;
-    line-height: 16px;
-    text-transform: uppercase; }
 
 nav {
   position: fixed;
@@ -218,10 +166,16 @@ nav {
       nav .nav-default ul li {
         margin: 0 10px;
         display: inline-block; }
-        nav .nav-default ul li a:hover {
-          color: #0b36e4; }
+        nav .nav-default ul li a {
+          border-bottom-width: 1px;
+          border-bottom-style: solid;
+          border-bottom-color: transparent; }
+          nav .nav-default ul li a:hover {
+            border-bottom-color: inherit; }
         nav .nav-default ul li.current a {
           color: #0b36e4 !important; }
+          nav .nav-default ul li.current a:hover {
+            border-bottom: none; }
       nav .nav-default ul:after {
         content: '';
         width: 114px;
@@ -256,11 +210,26 @@ nav {
     nav .nav-mobile .mobile-list {
       display: none;
       background: #172044;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       -webkit-transform: translateY(50px);
       -moz-transform: translateY(50px);
       -ms-transform: translateY(50px);
       -o-transform: translateY(50px);
-      transform: translateY(50px); }
+      transform: translateY(50px);
+      max-height: -moz-calc(100vh - 50px);
+      max-height: -webkit-calc(100vh - 50px);
+      max-height: calc(100vh - 50px);
+      overflow-y: auto; }
+      nav .nav-mobile .mobile-list li a {
+        display: block;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 5px; }
+        nav .nav-mobile .mobile-list li a:hover {
+          background-color: #ffffff;
+          color: #172044; }
+      nav .nav-mobile .mobile-list li.current a {
+        background-color: #ffffff;
+        color: #172044; }
 
 .intro {
   background-repeat: no-repeat;
@@ -296,5 +265,122 @@ nav {
     position: absolute;
     top: 0;
     left: -100%; }
+
+.catalog .grid .column {
+  margin-left: 4%;
+  margin-right: 4%; }
+  .catalog .grid .column .item {
+    display: block;
+    color: #333333;
+    text-decoration: none;
+    margin-bottom: 40px; }
+    .catalog .grid .column .item img {
+      margin-bottom: -30px; }
+    .catalog .grid .column .item h1 {
+      display: inline-block;
+      margin: 0;
+      -webkit-transition: color 0.3s;
+      -moz-transition: color 0.3s;
+      -ms-transition: color 0.3s;
+      -o-transition: color 0.3s;
+      transition: color 0.3s; }
+    .catalog .grid .column .item:hover h1 {
+      color: #0b36e4; }
+    .catalog .grid .column .item:before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 0;
+      width: 84px;
+      height: 84px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      z-index: 2; }
+  .catalog .grid .column p {
+    font-size: 22px;
+    line-height: 24px;
+    margin: 0 0 10px 0; }
+
+.clients .grid {
+  padding-bottom: 70px; }
+  .clients .grid .column {
+    text-align: center;
+    padding-bottom: 20px; }
+    .clients .grid .column p {
+      font-size: 24px;
+      line-height: 24px;
+      margin: 24px 0 0 0; }
+
+.team .slider {
+  position: relative; }
+.team .item {
+  font-family: "FuturaBook", sans-serif;
+  text-align: center; }
+  .team .item img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .team .item .name {
+    font-size: 24px;
+    line-height: 24px;
+    margin: 24px 0 14px 0; }
+  .team .item .role {
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase; }
+
+.market .map {
+  height: 480px;
+  width: 100%; }
+.market .grid .column h1 {
+  margin: 0 0 30px;
+  display: inline-block;
+  border-bottom-color: #0b36e4;
+  padding-bottom: 10px;
+  padding-right: 20px; }
+.market .grid .column p {
+  line-height: 26px;
+  padding-left: 34px; }
+
+.contacts .right {
+  position: relative;
+  min-height: 480px;
+  padding-bottom: 20px; }
+  .contacts .right .map {
+    height: 480px;
+    position: absolute;
+    right: 0;
+    left: 44%;
+    z-index: 2; }
+.contacts .item {
+  margin-bottom: 50px;
+  padding-left: 34px;
+  cursor: pointer; }
+  .contacts .item:last-child {
+    margin-bottom: 0; }
+  .contacts .item h3 {
+    padding: 7px 10px 4px 10px;
+    margin: -7px 0 16px -10px;
+    display: inline-block;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+  .contacts .item p {
+    line-height: 24px;
+    margin: 0; }
+  .contacts .item:hover h3 {
+    background-color: #fff;
+    color: #172044; }
 
 /*# sourceMappingURL=base.css.map */

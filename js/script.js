@@ -1,11 +1,14 @@
 $(document).ready(function() {
 
-
   var navMobile = $('[data-nav-mobile]');
   var linkMobile = $('[data-link-mobile]');
   var navParent = $('nav');
   var btnMenu = $('[data-toggle]');
   var btnScroll = $('[data-scroll]');
+  var aboutSlider = $("[data-about-slide]");
+  var teamSlider = $("[data-team-slide]");
+  var teamPrev = $("[data-team-prev]");
+  var teamNext = $("[data-team-next]");
 
   $('[data-nav-default],[data-nav-mobile]').onePageNav({
     currentClass: 'current',
@@ -66,69 +69,41 @@ $(document).ready(function() {
     $('html, body').animate({"scrollTop" : to}, 750);
   });
 
-  $("[data-about-slide]").owlCarousel({
+  aboutSlider.owlCarousel({
     items: 1,
     nav: false
   });
 
-  $("[data-team-slide]").owlCarousel({
+  teamSlider.owlCarousel({
     items: 5,
+    responsive:{
+      0:{
+        items:1
+      },
+      641:{
+        items:2
+      },
+      769:{
+        items:3
+      },
+      1281:{
+        items:5
+      }
+    },
     margin: 40,
-    nav: true,
+    nav: false,
     dots: false,
     navText:['','']
   });
 
+  teamNext.on('click', function() {
+
+    teamSlider.trigger('next.owl.carousel');
+  });
+
+  teamPrev.click(function() {
+
+    teamSlider.trigger('prev.owl.carousel');
+  });
+
 });
-
-(function($) {
-
-
-  //$(window).on( 'resize load', initNav );
-
-
-
-
-  $("#competence-list").owlCarousel({
-    navigation : true,
-    slideSpeed : 300,
-    paginationSpeed : 400,
-    singleItem:true,
-    navigationText : ["", ""]
-  });
-
-  $("#experience-list,#customers-list").owlCarousel({
-    navigation : true,
-    slideSpeed : 300,
-    items : 4,
-    itemsDesktop : [1000,4],
-    itemsDesktopSmall : [751,3],
-    itemsTablet: [665,2],
-    itemsMobile : [456,1],
-    paginationSpeed : 400,
-    navigationText : ["", ""]
-
-  });
-  $("#manager-list").owlCarousel({
-    navigation : true,
-    slideSpeed : 300,
-    items : 2,
-    itemsDesktop : [1000,2],
-    itemsDesktopSmall : [979, 2],
-    itemsTablet : [751, 1],
-    paginationSpeed : 400,
-    navigationText : ["", ""]
-  });
-  $("#team-list").owlCarousel({
-    navigation : true,
-    slideSpeed : 300,
-    items : 5,
-    itemsDesktop : [1000,5],
-    itemsDesktopSmall : [742,3],
-    itemsTablet: [665,2],
-    itemsMobile : [456,1],
-    paginationSpeed : 400,
-    navigationText : ["", ""]
-  });
-
-})(jQuery);

@@ -42,9 +42,26 @@ section {
   margin-top: -80px;
 }
 
-h1, h2 {
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 150px 20px 74px 20px;
+  background-position: center 80px;
+  background-repeat: no-repeat;
+  background-size: 196px;
+  color: $blue;
+}
+
+h1, h2, h3 {
   font-family: $demi;
   font-weight: normal;
+}
+
+h1 {
+  font-size: 70px;
+  line-height: 70px;
+  border-bottom: 8px solid;
+  padding-bottom: 14px;
 }
 
 h2 {
@@ -60,11 +77,11 @@ h2 {
   }
 }
 
-h1 {
-  font-size: 70px;
-  line-height: 70px;
-  border-bottom: 8px solid;
-  padding-bottom: 14px;
+h3 {
+  font-size: 24px;
+  line-height: 26px;
+  margin: 0 0 16px;
+  text-transform: uppercase;
 }
 
 p {
@@ -77,7 +94,6 @@ p {
 
 .container {
   margin: 0 auto;
-  //max-width: 1240px;
   max-width: 1680px;
   padding: 0 40px;
 
@@ -85,7 +101,6 @@ p {
 
   }
 }
-
 
 .grid {
   display: -webkit-box;
@@ -126,6 +141,8 @@ p {
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
+    max-width: 320px;
+    width: 20%;
 
     img {
       width: 100%;
@@ -133,12 +150,210 @@ p {
       display: block;
     }
   }
+}
 
-  &.catalog {
+.box-blue {
+  background-color: $blue;
+  color: #fff;
+}
+
+.hide {
+  display: none !important;
+}
+
+.map {
+  background: $map;
+}
+
+.item {
+  position: relative;
+}
+
+
+//-----navigate-----//
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: 22px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  .nav-default {
+
+    text-align: center;
+    padding: 40px 0 20px;
+    @include transition(background 0.2s, padding 0.2s);
+
+    ul {
+      display: inline-block;
+      position: relative;
+
+      li {
+        margin: 0 10px;
+        display: inline-block;
+
+        a {
+          border-bottom-width: 1px;
+          border-bottom-style: solid;
+          border-bottom-color: transparent;
+
+          &:hover {
+            border-bottom-color: inherit;
+          }
+        }
+
+        &.current {
+
+          a {
+            color: $active-blue !important;
+
+            &:hover {
+              border-bottom: none
+            }
+          }
+        }
+      }
+
+      &:after {
+        content: '';
+        width: 114px;
+        height: 21px;
+        background-repeat: no-repeat;
+        left: -180px;
+        top: 4px;
+        position: absolute;
+        opacity: 0;
+        @include transition(opacity 0.2s);
+      }
+    }
+
+  }
+
+  &.fix {
+
+    .nav-default {
+      background: #fff;
+      padding: 25px 0;
+      @include shadow(0px 1px 4px rgba(0,0,0,0.1));
+
+      ul {
+
+        li {
+          a {
+            color: $blue;
+          }
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .nav-mobile {
+    display: none;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .mobile-list {
+      display: none;
+      background: $blue;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      @include  transform(translateY(50px));
+      @include calc(max-height,'100vh - 50px');
+      overflow-y: auto;
+
+      li {
+         a {
+           display: block;
+           border-top: 1px solid rgba(255,255,255,0.1);
+           padding: 5px;
+           &:hover {
+             background-color: #ffffff;
+             color: $blue;
+           }
+         }
+        &.current {
+          a {
+            background-color: #ffffff;
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+//-----navigate END-----//
+
+
+//-----intro-----//
+.intro {
+  background-repeat: no-repeat;
+  background-position: center 80px;
+  background-size: 220px;
+  text-align: center;
+  padding: 180px 65px 56px 65px;
+  width: 590px;
+  margin: 0 auto;
+
+  .btn-set {
+    margin-top: 40px;
+
+    button {
+      padding-left: 0;
+      padding-right: 0;
+      width: 148px;
+    }
+  }
+}
+//-----intro END-----//
+
+
+//-----about-----//
+.about-slide {
+  width: 50%;
+  margin-left: 50%;
+  position: relative;
+  padding: 140px 8% 120px 10.5%;
+
+  &:after {
+    content: '';
+    @include back;
+    background-image: url("../img/about.png");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+  }
+}
+//-----about END-----//
+
+
+//-----catalog-----//
+.catalog {
+
+  .grid {
 
     .column {
-      max-width: 320px;
-      width: 20%;
       margin-left: 4%;
       margin-right: 4%;
 
@@ -191,13 +406,17 @@ p {
       }
     }
   }
+}
+//-----catalog END-----//
 
-  &.clients {
+
+//-----clients-----//
+.clients {
+
+  .grid {
     padding-bottom: 70px;
 
     .column {
-      width: 20%;
-      max-width: 320px;
       text-align: center;
       padding-bottom: 20px;
 
@@ -209,21 +428,15 @@ p {
     }
   }
 }
+//-----clients END-----//
 
-.box-blue {
-  background-color: $blue;
-  color: #fff;
-}
 
-.hide {
-  display: none !important;
-}
-
-.item {
-  position: relative;
-}
-
+//-----team-----//
 .team {
+
+  .slider {
+    position: relative;
+  }
 
   .item {
     font-family: $book;
@@ -249,155 +462,89 @@ p {
   }
 
 }
+//-----team END-----//
 
-//-----navigate-----//
 
-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 100;
+//-----market-----//
+.market {
 
-  ul {
-    list-style: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-
-    li {
-      font-size: 22px;
-
-      a {
-        text-decoration: none;
-      }
-    }
-
-  }
-
-  .nav-default {
-
-    text-align: center;
-    padding: 40px 0 20px;
-    @include transition(background 0.2s, padding 0.2s);
-
-    ul {
-      display: inline-block;
-      position: relative;
-
-      li {
-        margin: 0 10px;
-        display: inline-block;
-
-        a {
-
-          &:hover {
-            color: $active-blue;
-          }
-        }
-
-        &.current {
-
-          a {
-            color: $active-blue !important;
-          }
-        }
-      }
-
-      &:after {
-        content: '';
-        width: 114px;
-        height: 21px;
-        background-repeat: no-repeat;
-        left: -180px;
-        top: 4px;
-        position: absolute;
-        opacity: 0;
-        @include transition(opacity 0.2s);
-      }
-    }
-
-  }
-
-  &.fix {
-
-    .nav-default {
-      background: #fff;
-      padding: 25px 0;
-      @include shadow(0px 1px 4px rgba(0,0,0,0.1));
-
-      ul {
-
-        li {
-          a {
-            color: $blue;
-          }
-        }
-
-        &:after {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .nav-mobile {
-    display: none;
-    height: 50px;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    .mobile-list {
-      display: none;
-      background: $blue;
-      @include  transform(translateY(50px));
-    }
-  }
-}
-
-//-----section intro-----//
-
-.intro {
-  background-repeat: no-repeat;
-  background-position: center 80px;
-  background-size: 220px;
-  text-align: center;
-  padding: 180px 65px 56px 65px;
-  width: 590px;
-  margin: 0 auto;
-
-  .btn-set {
-    margin-top: 40px;
-
-    button {
-      padding-left: 0;
-      padding-right: 0;
-      width: 148px;
-    }
-  }
-}
-
-//-----section about-----//
-
-.about-slide {
-  width: 50%;
-  margin-left: 50%;
-  position: relative;
-  padding: 140px 8% 120px 10.5%;
-
-  &:after {
-    content: '';
-    @include back;
-    background-image: url("../img/about.png");
+  .map {
+    height: 480px;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -100%;
+  }
+
+  .grid {
+
+    .column {
+
+      h1 {
+        margin: 0 0 30px;
+        display: inline-block;
+        border-bottom-color: $active-blue;
+        padding-bottom: 10px;
+        padding-right: 20px;
+      }
+
+      p {
+        line-height: 26px;
+        padding-left: 34px;
+      }
+    }
   }
 }
+//-----market END-----//
 
-//-----section catalogue-----//
+
+//-----contacts-----//
+.contacts {
+
+  .right {
+    position: relative;
+    min-height: 480px;
+    padding-bottom: 20px;
+
+    .map {
+      height: 480px;
+      position: absolute;
+      right: 0;
+      left: 44%;
+      z-index: 2;
+    }
+  }
+
+  .item {
+    margin-bottom: 50px;
+    padding-left: 34px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      padding: 7px 10px 4px 10px;
+      margin: -7px 0 16px -10px;
+      display: inline-block;
+      @include transition(all 0.3s);
+    }
+
+    p {
+      line-height: 24px;
+      margin: 0;
+    }
+
+    &:hover {
+
+      h3 {
+        background-color: #fff;
+        color: $blue;
+      }
+    }
+  }
+}
+//-----contacts END-----//
+
+
 
 
 

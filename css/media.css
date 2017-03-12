@@ -144,7 +144,9 @@
   header {
     padding-top: 260px;
     height: auto;
-    position: relative; }
+    position: relative;
+    background-image: none;
+    background-color: #172044; }
     header:after {
       content: '';
       position: absolute;

@@ -15,6 +15,7 @@ body {
   line-height: 30px;
   color: #333333;
   background-color: #fff;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -314,7 +315,18 @@ nav {
   padding-bottom: 70px; }
   .clients .grid .column {
     text-align: center;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+    .clients .grid .column:hover {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1); }
     .clients .grid .column p {
       font-size: 24px;
       line-height: 24px;

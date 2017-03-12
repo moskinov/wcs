@@ -20,6 +20,7 @@ body {
   line-height: 30px;
   color: $text;
   background-color: #fff;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -419,6 +420,11 @@ nav {
     .column {
       text-align: center;
       padding-bottom: 20px;
+      @include transition(all 0.3s);
+
+      &:hover {
+        @include transform(scale(1.1));
+      }
 
       p {
         font-size: 24px;

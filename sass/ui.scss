@@ -72,7 +72,11 @@ button {
   padding: 13px 22px 13px;
   @include transition(all 0.2s);
 
-  &:hover,&.invert {
+  &:hover {
+    @include transform(scale(0.9));
+  }
+
+  &.invert {
     background: #fff;
     color: $blue;
   }
@@ -87,6 +91,7 @@ button {
     &:hover {
       background: $blue;
       color: #fff;
+      @include transform(scale(1));
     }
   }
 

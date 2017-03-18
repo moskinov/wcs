@@ -77,7 +77,13 @@ button {
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s; }
-  button:hover, button.invert {
+  button:hover {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9); }
+  button.invert {
     background: #fff;
     color: #172044; }
   button.blue {
@@ -88,7 +94,12 @@ button {
     padding: 7px 10px 6px; }
     button.blue:hover {
       background: #172044;
-      color: #fff; }
+      color: #fff;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1); }
 
 .btn-set button {
   margin: 0 4px; }

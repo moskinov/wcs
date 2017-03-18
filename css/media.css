@@ -31,7 +31,7 @@
     background: transparent;
     width: 40px; } }
 @media screen and (max-width: 1060px) {
-  nav .nav-default ul:after {
+  nav .nav-default .logo {
     display: none; } }
 @media screen and (max-width: 880px) {
   .catalog .grid .column .item h1 {

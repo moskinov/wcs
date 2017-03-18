@@ -230,18 +230,19 @@ nav {
           }
         }
       }
+    }
 
-      &:after {
-        content: '';
-        width: 114px;
-        height: 21px;
-        background-repeat: no-repeat;
-        left: -180px;
-        top: 4px;
-        position: absolute;
-        opacity: 0;
-        @include transition(opacity 0.2s);
-      }
+    .logo {
+      opacity: 0;
+      width: 114px;
+      height: 21px;
+      display: inline-block;
+      margin-left: -118px;
+      position: relative;
+      left: -62px;
+      top: 3px;
+      background-repeat: no-repeat;
+      @include transition(opacity 0.2s);
     }
 
   }
@@ -250,8 +251,7 @@ nav {
 
     .nav-default {
       background: #fff;
-      padding: 25px 0;
-      @include shadow(0px 1px 4px rgba(0,0,0,0.1));
+      padding: 27px 0 23px;
 
       ul {
 
@@ -260,10 +260,10 @@ nav {
             color: $blue;
           }
         }
+      }
 
-        &:after {
-          opacity: 1;
-        }
+      .logo {
+        opacity: 1;
       }
     }
   }
@@ -277,16 +277,19 @@ nav {
     .mobile-list {
       display: none;
       background: $blue;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
       @include  transform(translateY(50px));
-      @include calc(max-height,'100vh - 50px');
+      @include calc(height,'100vh - 50px');
       overflow-y: auto;
 
       li {
          a {
            display: block;
-           border-top: 1px solid rgba(255,255,255,0.1);
-           padding: 5px;
+           padding: 15px 10px;
+           font-family: "FuturaDemi", sans-serif;
+           font-size: 24px;
+           line-height: 26px;
+           text-transform: uppercase;
            &:hover {
              background-color: #ffffff;
              color: $blue;

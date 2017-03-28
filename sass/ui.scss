@@ -60,7 +60,7 @@
   }
 }
 
-button {
+button,a.button {
   font-family: $demi;
   font-size: 20px;
   line-height: 20px;
@@ -70,6 +70,8 @@ button {
   border: 2px solid #fff;
   cursor: pointer;
   padding: 13px 22px 13px;
+  display: inline-block;
+  text-decoration: none;
   @include transition(all 0.2s);
 
   &:hover {
@@ -99,7 +101,7 @@ button {
 
 .btn-set {
 
-  button {
+  button,a.button {
     margin: 0 4px;
   }
 }

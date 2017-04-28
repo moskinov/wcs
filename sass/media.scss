@@ -200,6 +200,23 @@
   }
 }
 
+@media screen and (max-width: 580px) {
+
+  body .modal-body{
+    padding: 50px 20px;
+  }
+
+  .fields{
+    -webkit-flex-direction: column;
+    -ms-flex-direction:     column;
+    flex-direction:         column;
+
+    .field {
+      width: 100%;
+    }
+  }
+}
+
 @media screen and (max-width: 510px) {
   header {
     padding-top: 260px;

@@ -328,22 +328,58 @@
     </section>
 
     <footer>
-        <button class="blue static uppercase" data-toggle="modal" data-target="#feedbackModal">feedback form</button>
+        <button onclick="MainManager.showModal('feedbackModal')" class="blue static uppercase">feedback form</button>
+
         <div>&copy;2016 Wembley Chemicals and Supplies Ltd.</div>
     </footer>
 
     <div class="modal fade theme-wcs" id="feedbackModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
+        <div class="modal-body">
+            <div class="close-modal" onclick="MainManager.hideModal('feedbackModal')"></div>
+            <div data-start class="start">
+                <h3>
+                    Feedback form
+                </h3>
+                <form data-feedback-form action="" id="feedbackForm">
 
-                </div>
-                <div class="modal-body">
-                    <form data-feedback-form action="" id="feedbackForm">
-                        <input data-feedback-mail data-mail type="email" name="mail">
-                        <input data-feedback-tel data-all type="text" name="tel">
-                    </form>
-                </div>
+                    <div class="fields">
+                        <div class="field">
+
+                            <div class="label">Name *</div>
+                            <input data-all data-validate data-validate-name type="text" name="name">
+
+                            <div class="label">Company / Organization</div>
+                            <input type="text" name="company">
+
+                            <div class="label">Country of Residence *</div>
+                            <input data-all data-validate data-validate-country type="text" name="country">
+
+                        </div>
+
+                        <div class="field">
+
+                            <div class="label">Phone</div>
+                            <input type="text" name="phone">
+
+                            <div class="label">E-Mail *</div>
+                            <input data-mail data-validate data-validate-mail type="text" name="mail">
+
+                            <div class="label">Your inquiry *</div>
+                            <input data-all data-validate data-validate-inquiry type="text" name="inquiry">
+
+                        </div>
+                    </div>
+
+                    <div class="form-btn">
+                        <button class="invert" onclick="MainManager.submit();return false;">Send</button>
+                    </div>
+
+
+                </form>
+            </div>
+            <div data-end class="end">
+                <h3>Thank you!</h3>
+                We will contact you shortly
             </div>
         </div>
     </div>

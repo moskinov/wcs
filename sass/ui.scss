@@ -184,4 +184,106 @@ button,a.button {
   }
 }
 
+body {
+
+  .modal-backdrop.fade.in {
+    opacity: 1;
+    background: $blue;
+  }
+
+  .modal {
+    width: 680px;
+    margin-left: -340px;
+    background-color: $blue;
+    color: #fff;
+    border: 0 !important;
+    @include shadow(none);
+
+    h3 {
+      font-size: 27px;
+      text-align: center;
+      text-transform: none;
+      padding: 0 30px 20px;
+    }
+  }
+
+  .modal-body {
+    padding: 50px 40px;
+  }
+
+}
+
+.end {
+  display: none;
+  text-align: center;
+  padding: 50px 0;
+
+  h3 {
+    padding-bottom: 0 !important;
+  }
+}
+
+.fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-wrap:  wrap;
+  -ms-flex-wrap:      wrap;
+  flex-wrap:          wrap;
+
+  margin-left: -14px;
+  margin-right: -14px;
+
+  .field {
+    width: 50%;
+    padding-left: 14px;
+    padding-right: 14px;
+
+    input {
+      display: block;
+      width: 100%;
+      margin-bottom: 14px;
+      background: transparent;
+      border: 1px solid #fff;
+      height: 50px;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 4px 20px;
+
+      &.field-has-error {
+        border-color: #af4545 !important;
+      }
+    }
+  }
+
+  .label {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 4px;
+  }
+}
+
+.form-btn {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.close-modal {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: no-repeat center;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIwIDIwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjExLjQsMTAgMTkuMiwxNy44IDE3LjgsMTkuMiAxMCwxMS40IDIuMiwxOS4yIDAuOCwxNy44IDguNiwxMCAwLjgsMi4yIDIuMiwwLjggMTAsOC42IDE3LjgsMC44IDE5LjIsMi4yICIvPjwvc3ZnPg==);
+  cursor: pointer;
+  right: 35px;
+  top: 48px;
+  @include transition(all 0.3s);
+
+  &:hover {
+    @include  transform(rotate(90deg));
+  }
+}
+
 

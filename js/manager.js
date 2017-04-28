@@ -9,6 +9,7 @@ function MainManager_f() {
   this.regexpAll = /[^\>]*/;
   this.mail = $('[data-mail]');
   this.all = $('[data-all]');
+  this.fieldValidate = $('[data-validate]');
   this.feedbackForm = $('[data-feedback-form]');
 
   this.init = function () {
@@ -73,6 +74,36 @@ function MainManager_f() {
 
       MainManager.validInit($(this), MainManager.regexpAll);
 
+    });
+
+    MainManager.fieldValidate.on('focus', function(){
+
+      MainManager.validClear($(this));
+
+    })
+  };
+
+  this.showModal = function (id){
+
+    var modal = $('#'+id);
+
+    modal.modal({
+      backdrop: 'static'
+    });
+
+    modal.modal('show');
+  };
+
+  this.hideModal = function (id){
+
+    var modal = $('#'+id);
+
+    modal.find('input').removeClass('field-has-error').val('');
+
+    modal.modal('hide');
+
+    $('[data-end]').fadeOut('300', function(){
+      $('[data-start]').fadeIn('300')
     });
   };
 
@@ -144,7 +175,19 @@ function MainManager_f() {
   this.submit = function() {
     var validate = [
       {
-        name: 'data-application-city',
+        name: 'data-validate-name',
+        regexp: MainManager.regexpAll
+      },
+      {
+        name: 'data-validate-country',
+        regexp: MainManager.regexpAll
+      },
+      {
+        name: 'data-validate-mail',
+        regexp: MainManager.regexpMail
+      },
+      {
+        name: 'data-validate-inquiry',
         regexp: MainManager.regexpAll
       }
     ];
@@ -162,9 +205,11 @@ function MainManager_f() {
 
     if (valid) {
 
-      var data = MainManager.dataJSON(MainManager.feedbackForm);
+      $('[data-start]').fadeOut('300', function(){
+        $('[data-end]').fadeIn('300')
+      });
 
-      alert('Submit application form (data in console)');
+      var data = MainManager.dataJSON(MainManager.feedbackForm);
 
       console.log(data);
 

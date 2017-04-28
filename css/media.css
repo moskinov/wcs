@@ -146,6 +146,16 @@
   footer {
     padding: 100px 20px 34px 20px;
     background-position: center 50px; } }
+@media screen and (max-width: 580px) {
+  body .modal-body {
+    padding: 50px 20px; }
+
+  .fields {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .fields .field {
+      width: 100%; } }
 @media screen and (max-width: 510px) {
   header {
     padding-top: 260px;

@@ -80,11 +80,11 @@ button, a.button {
   -o-transition: all 0.2s;
   transition: all 0.2s; }
   button:hover, a.button:hover {
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    -o-transform: scale(0.9);
-    transform: scale(0.9); }
+    -webkit-transform: scale(0.94);
+    -moz-transform: scale(0.94);
+    -ms-transform: scale(0.94);
+    -o-transform: scale(0.94);
+    transform: scale(0.94); }
   button.invert, a.button.invert {
     background: #fff;
     color: #172044; }
@@ -102,6 +102,17 @@ button, a.button {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1); }
+    button.blue.static, a.button.blue.static {
+      background: #172044;
+      color: #fff; }
+      button.blue.static:hover, a.button.blue.static:hover {
+        -webkit-transform: scale(0.94);
+        -moz-transform: scale(0.94);
+        -ms-transform: scale(0.94);
+        -o-transform: scale(0.94);
+        transform: scale(0.94); }
+  button.uppercase, a.button.uppercase {
+    text-transform: uppercase; }
 
 .btn-set button, .btn-set a.button {
   margin: 0 4px; }

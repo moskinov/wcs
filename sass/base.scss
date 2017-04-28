@@ -52,6 +52,10 @@ footer {
   background-repeat: no-repeat;
   background-size: 196px;
   color: $blue;
+
+  button {
+    margin-bottom: 16px;
+  }
 }
 
 h1, h2, h3 {
@@ -179,6 +183,7 @@ nav {
   right: 0;
   top: 0;
   z-index: 100;
+  will-change: transform;
 
   ul {
     list-style: none;
@@ -209,6 +214,13 @@ nav {
       li {
         margin: 0 10px;
         display: inline-block;
+        vertical-align: middle;
+
+        .blue.static {
+          background: #fff;
+          color: $blue;
+          border: 2px solid #fff;
+        }
 
         a {
           border-bottom-width: 1px;
@@ -241,7 +253,7 @@ nav {
       margin-left: -118px;
       position: relative;
       left: -62px;
-      top: 3px;
+      top: 6px;
       background-repeat: no-repeat;
       @include transition(opacity 0.2s);
     }
@@ -257,6 +269,13 @@ nav {
       ul {
 
         li {
+
+          .blue.static {
+            background: $blue;
+            color: #fff;
+            border: 2px solid $blue;
+          }
+
           a {
             color: $blue;
           }

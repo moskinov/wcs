@@ -32,7 +32,13 @@ nav.fix .nav-default .logo {
     width: 50%;
     border-color: #c8c8c8;
     border-style: solid;
-    padding: 130px 10% 110px 10%; }
+    padding: 130px 10% 110px 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
     .products .item:nth-child(odd) {
       border-width: 0 1px 1px 0; }
     .products .item:nth-child(even) {
@@ -45,5 +51,8 @@ nav.fix .nav-default .logo {
       line-height: 16px;
       font-family: "FuturaDemi", sans-serif;
       margin-bottom: 30px; }
+    .products .item .btn-set {
+      margin-left: -4px;
+      margin-top: auto; }
 
 /*# sourceMappingURL=product.css.map */

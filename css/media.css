@@ -26,6 +26,12 @@
 
   .catalog .grid .column .item:before {
     left: 40px; } }
+@media screen and (max-width: 1220px) {
+  nav .nav-default .logo {
+    left: -22px; }
+
+  nav ul li {
+    font-size: 20px; } }
 @media screen and (max-width: 1050px) {
   .owl-nav div {
     background: transparent;
@@ -80,7 +86,7 @@
   .products .item {
     width: 100%;
     border-width: 0 0 1px 0 !important; } }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 790px) {
   nav .nav-default {
     display: none; }
   nav .nav-mobile {

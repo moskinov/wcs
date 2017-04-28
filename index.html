@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/icon-b64.css">
     <link rel="stylesheet" href="lib/owl.carousel.min.css">
     <link rel="stylesheet" href="lib/animations.css">
+    <link rel="stylesheet" href="lib/bootstrap-modal.css">
     <link rel="stylesheet" href="font/stylesheet.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/ui.css">
@@ -47,6 +48,7 @@
                 <li><a href="#team">Our team</a></li>
                 <li><a href="#market">Our market</a></li>
                 <li><a href="#contacts">Contacts</a></li>
+                <li><button class="blue static uppercase">feedback form</button></li>
             </ul>
         </div>
 
@@ -326,14 +328,34 @@
     </section>
 
     <footer>
-        &copy;2016 Wembley Chemicals and Supplies Ltd.
+        <button class="blue static uppercase" data-toggle="modal" data-target="#feedbackModal">feedback form</button>
+        <div>&copy;2016 Wembley Chemicals and Supplies Ltd.</div>
     </footer>
+
+    <div class="modal fade theme-wcs" id="feedbackModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                </div>
+                <div class="modal-body">
+                    <form data-feedback-form action="" id="feedbackForm">
+                        <input data-feedback-mail data-mail type="email" name="mail">
+                        <input data-feedback-tel data-all type="text" name="tel">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="lib/jquery.min.js"></script>
     <script src="lib/jquery.nav.js"></script>
     <script src="lib/owl.carousel.js"></script>
     <script src="lib/css3-animate-it.js"></script>
-    <script src="js/script.js"></script>
+    <script src="lib/bootstrap-modalmanager.js"></script>
+    <script src="lib/bootstrap-modal.js"></script>
+    <script src="js/manager.js"></script>
+    <script src="js/init.js"></script>
 
     <script src="js/main.js"></script>
 </body>

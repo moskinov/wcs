@@ -75,7 +75,7 @@ button,a.button {
   @include transition(all 0.2s);
 
   &:hover {
-    @include transform(scale(0.9));
+    @include transform(scale(0.94));
   }
 
   &.invert {
@@ -95,6 +95,20 @@ button,a.button {
       color: #fff;
       @include transform(scale(1));
     }
+
+    &.static {
+      background: $blue;
+      color: #fff;
+
+      &:hover {
+        @include transform(scale(0.94));
+      }
+    }
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+
   }
 
 }

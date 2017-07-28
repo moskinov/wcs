@@ -256,6 +256,10 @@ body {
         border-color: #af4545 !important;
       }
     }
+
+    &.fluid {
+      width: 100%;
+    }
   }
 
   .label {

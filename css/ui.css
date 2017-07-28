@@ -230,6 +230,8 @@ body .modal-body {
       padding: 4px 20px; }
       .fields .field input.field-has-error {
         border-color: #af4545 !important; }
+    .fields .field.fluid {
+      width: 100%; }
   .fields .label {
     font-size: 16px;
     line-height: 20px;
